@@ -49,7 +49,7 @@ async function updateMovie(req, res, next) {
             res.status(202).send(data);
         })
         .catch(err => {
-            logger.err(JSON.stringify(err))
+            logger.error(JSON.stringify(err))
             res.status(400).send({
                 message:
                     err.message || "Some error occurred while updating the Movie."
@@ -74,7 +74,7 @@ async function addMovie(req, res, next) {
             res.status(201).send(data);
         })
         .catch(err => {
-            logger.err(JSON.stringify(err))
+            logger.error(JSON.stringify(err))
             res.status(400).send({
                 message:
                     err.message || "Some error occurred while creating the Movie."
@@ -107,7 +107,7 @@ async function deleteMovieById(req, res, next) {
         logger.info(`Movie with id ${mid} has been deleted`)
         res.status(202).send(String(result))
     }).catch((err) => {
-        logger.err(JSON.stringify(err))
+        logger.error(JSON.stringify(err))
         res.status(400).send(err)
     });
 }

@@ -107,7 +107,7 @@ async function getUserById(req, res, next) {
     }).then((result) => {
         res.status(200).send(result)
     }).catch((err) => {
-        logger.err(JSON.stringify(err))
+        logger.error(JSON.stringify(err))
         res.status(400).send(err)
     });
 }
