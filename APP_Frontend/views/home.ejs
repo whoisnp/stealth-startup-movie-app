@@ -1,0 +1,25 @@
+<title>My movies | Home </title>
+<%- include ('./partials/nav') %>
+
+<br>
+<div class="list-group">
+
+  
+  <% movies.forEach( (movie) => { %>
+  <a href="movies/movie/<%= movie.id %>" class="list-group-item list-group-item-action flex-column align-items-start ">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%= movie.movieName %></h5>
+
+      <h5>
+        <% for(var i=0; i<movie.rating; i++) {%>
+        &#9733;
+        <% } %>
+      </h5>
+
+    </div>
+    <p class="mb-1">Genre : <%= movie.genre %></p>
+    <small>cast: <%= (movie.cast).join(",")%></small>
+  </a>
+  <% }); %>
+
+</div>
